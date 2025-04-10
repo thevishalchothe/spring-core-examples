@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="department" class="com.vbc.spring.xmlbased.model.Department">
+        <property name="deptId" value="101"/>
+        <property name="deptName" value="IT"/>
+    </bean>
+
+    <bean id="employee" class="com.vbc.spring.xmlbased.model.Employee">
+        <property name="empId" value="1"/>
+        <property name="empName" value="Vishal Chothe"/>
+        <property name="salary" value="75000"/>
+        <property name="department" ref="department"/>
+    </bean>
+
+    <bean id="employeeService" class="com.vbc.spring.xmlbased.serviceImpl.EmployeeServiceImpl"/>
+</beans>
