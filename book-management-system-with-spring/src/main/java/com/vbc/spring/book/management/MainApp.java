@@ -2,11 +2,9 @@ package com.vbc.spring.book.management;
 
 import com.vbc.spring.book.management.controller.AdminController;
 import com.vbc.spring.book.management.controller.BookController;
+import com.vbc.spring.book.management.controller.RecordsController;
 import com.vbc.spring.book.management.controller.UserController;
-import com.vbc.spring.book.management.model.Admin;
-import com.vbc.spring.book.management.model.Book;
-import com.vbc.spring.book.management.model.College;
-import com.vbc.spring.book.management.model.User;
+import com.vbc.spring.book.management.model.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,13 +17,14 @@ public class MainApp {
         AdminController adminController = context.getBean("adminController", AdminController.class);
         BookController bookController = context.getBean("bookController", BookController.class);
         UserController userController = context.getBean("userController", UserController.class);
+        RecordsController recordsController = context.getBean("recordsController", RecordsController.class);
 
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
-            System.out.println("\n--- Admin Management System ---");
-            System.out.println("1. Register Admin");
+            System.out.println("\n--- Library Book Management System ---");
+            System.out.println("1. Register as Admin");
             System.out.println("2. Login Admin");
             System.out.println("3. Show All Admins");
             System.out.println("4. Exit");
@@ -58,7 +57,8 @@ public class MainApp {
                         while (afterLogin) {
                             System.out.println("\n1. Book Operations");
                             System.out.println("2. User Operations");
-                            System.out.println("3. Logout");
+                            System.out.println("3. Record Operations");
+                            System.out.println("4. Logout");
                             System.out.print("Choose an option: ");
                             int postLoginChoice = scanner.nextInt();
                             scanner.nextLine();
@@ -179,6 +179,84 @@ public class MainApp {
                                     break;
 
                                 case 3:
+                                    System.out.println("\n1. Add Record");
+                                    System.out.println("2. View All Records");
+                                    System.out.println("3. View Record by ID");
+                                    System.out.println("4. Update Record");
+                                    System.out.println("5. Delete Record");
+                                    System.out.println("6. View Records by User");
+                                    System.out.print("Choose Record Option: ");
+                                    int recOpt = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    switch (recOpt) {
+                                        case 1:
+                                            Records record = new Records();
+                                            System.out.print("User ID: ");
+                                            User rUser = new User();
+                                            rUser.setUid(scanner.nextInt());
+                                            scanner.nextLine();
+                                            record.setUser(rUser);
+                                            System.out.print("Book ID: ");
+                                            Book rBook = new Book();
+                                            rBook.setBid(scanner.nextInt());
+                                            scanner.nextLine();
+                                            record.setBook(rBook);
+                                            System.out.print("Borrow Date (YYYY-MM-DD): ");
+                                            record.setBorrowDate(scanner.nextLine());
+                                            System.out.print("Return Date (YYYY-MM-DD): ");
+                                            record.setReturnDate(scanner.nextLine());
+                                            System.out.print("Is Returned (true/false): ");
+                                            record.setReturned(scanner.nextBoolean());
+                                            scanner.nextLine();
+                                            recordsController.borrowBook(record);
+                                            break;
+                                        case 2:
+                                            recordsController.viewAllRecords();
+                                            break;
+                                        case 3:
+                                            System.out.print("Enter Record ID: ");
+                                            recordsController.getRecordById(scanner.nextInt());
+                                            scanner.nextLine();
+                                            break;
+                                        case 4:
+                                            System.out.print("Enter Record ID to Update: ");
+                                            int rid = scanner.nextInt();
+                                            scanner.nextLine();
+                                            Records updateRec = new Records();
+                                            System.out.print("New User ID: ");
+                                            User u = new User();
+                                            u.setUid(scanner.nextInt());
+                                            scanner.nextLine();
+                                            updateRec.setUser(u);
+                                            System.out.print("New Book ID: ");
+                                            Book b = new Book();
+                                            b.setBid(scanner.nextInt());
+                                            scanner.nextLine();
+                                            updateRec.setBook(b);
+                                            System.out.print("New Borrow Date: ");
+                                            updateRec.setBorrowDate(scanner.nextLine());
+                                            System.out.print("New Return Date: ");
+                                            updateRec.setReturnDate(scanner.nextLine());
+                                            System.out.print("Is Returned: ");
+                                            updateRec.setReturned(scanner.nextBoolean());
+                                            scanner.nextLine();
+                                            recordsController.updateRecord(rid, updateRec);
+                                            break;
+                                        case 5:
+                                            System.out.print("Enter Record ID to Delete: ");
+                                            recordsController.deleteRecord(scanner.nextInt());
+                                            scanner.nextLine();
+                                            break;
+                                        case 6:
+                                            System.out.print("Enter User Name to View Records: ");
+                                            String userName = scanner.nextLine();
+                                            recordsController.getRecordsByUserName(userName);
+                                            break;
+                                    }
+                                    break;
+
+                                case 4:
                                     afterLogin = false;
                                     System.out.println("Logged out from admin session.");
                                     break;
@@ -202,7 +280,5 @@ public class MainApp {
                     System.out.println("Invalid option. Please choose between 1-4.");
             }
         }
-
-        scanner.close();
     }
 }

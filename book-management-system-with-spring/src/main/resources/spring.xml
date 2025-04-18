@@ -57,4 +57,19 @@
         <property name="userService" ref="userService"/>
     </bean>
 
+    <!-- Records Repository -->
+    <bean id="recordsRepository" class="com.vbc.spring.book.management.repository.impl.RecordsRepositoryImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- Records Service -->
+    <bean id="recordsService" class="com.vbc.spring.book.management.service.impl.RecordsServiceImpl">
+        <property name="recordsRepository" ref="recordsRepository"/>
+    </bean>
+
+    <!-- Records Controller -->
+    <bean id="recordsController" class="com.vbc.spring.book.management.controller.RecordsController">
+        <property name="recordsService" ref="recordsService"/>
+    </bean>
+
 </beans>
