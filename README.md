@@ -1,5 +1,8 @@
 # spring-core-examples 🚀
-The `spring-core-examples` is a collection of simple spring framework (core) examples demonstrating IoC, DI, beans, and other fundamental concepts. 📘💉
+
+The `spring-core-examples` is a collection of simple Spring Framework examples demonstrating IoC, DI, beans, and other fundamental concepts. 📘💉
+
+---
 
 ## Project Architecture 📂
 
@@ -27,3 +30,27 @@ The `spring-core-examples` is a collection of simple spring framework (core) exa
       - View all users or search for a user by ID.
       - User has reference to `College` enum with name and address fields.
   - Uses Spring's XML configuration for MySQL database connection, Repository, Service, and Controller beans.
+
+---
+
+### **Technologies Used** 💻🔧
+
+#### **Backend Technologies**
+- **Java (JDK 21)** ☕️: Core programming language for the application logic.
+- **Spring Framework (Core)** 🌱: For IoC, DI, and managing beans using XML-based configuration.
+- **JDBC** 📡: To connect and interact with the MySQL database.
+- **MySQL** 🗄️: Stores data for books, users, and admins.
+- **Maven** 🧰: For dependency management and project building.
+
+---
+
+### **Prerequisites** 🛠️
+
+Before you begin, make sure the following are installed:
+
+- **Java JDK 21 or later**: Download from [Oracle](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) or [OpenJDK](https://jdk.java.net/21/).
+- **IntelliJ IDEA for Enterprise Java**: Download from [IntelliJ IDEA Download](https://www.jetbrains.com/idea/download/)
+- **MySQL Server**: Install from [MySQL Community](https://dev.mysql.com/downloads/installer/).
+- **Maven**: [Install Maven](https://maven.apache.org/install.html) if not bundled with your IDE.
+
+---
