@@ -9,5 +9,5 @@ public class User {
     private String email;
     private String mobile;
     private String address;
-
+    private College college;
 }

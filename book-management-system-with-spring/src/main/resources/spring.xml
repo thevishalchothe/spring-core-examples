@@ -42,5 +42,19 @@
         <property name="bookService" ref="bookService"/>
     </bean>
 
+    <!-- User Repository -->
+    <bean id="userRepository" class="com.vbc.spring.book.management.repository.impl.UserRepositoryImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- User Service -->
+    <bean id="userService" class="com.vbc.spring.book.management.service.impl.UserServiceImpl">
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+    <!-- User Controller -->
+    <bean id="userController" class="com.vbc.spring.book.management.controller.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
 
 </beans>
