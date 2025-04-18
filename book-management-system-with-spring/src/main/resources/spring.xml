@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- MySQL Database Connection -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/book_management_db"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <!-- Admin Repository -->
+    <bean id="adminRepository" class="com.vbc.spring.book.management.repository.impl.AdminRepositoryImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- Admin Service -->
+    <bean id="adminService" class="com.vbc.spring.book.management.service.impl.AdminServiceImpl">
+        <property name="adminRepository" ref="adminRepository"/>
+    </bean>
+
+    <!-- Admin Controller -->
+    <bean id="adminController" class="com.vbc.spring.book.management.controller.AdminController">
+        <property name="adminService" ref="adminService"/>
+    </bean>
+
+</beans>
