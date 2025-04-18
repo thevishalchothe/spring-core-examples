@@ -27,4 +27,20 @@
         <property name="adminService" ref="adminService"/>
     </bean>
 
+    <!-- Book Repository -->
+    <bean id="bookRepository" class="com.vbc.spring.book.management.repository.impl.BookRepositoryImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- Book Service -->
+    <bean id="bookService" class="com.vbc.spring.book.management.service.impl.BookServiceImpl">
+        <property name="bookRepository" ref="bookRepository"/>
+    </bean>
+
+    <!-- Book Controller -->
+    <bean id="bookController" class="com.vbc.spring.book.management.controller.BookController">
+        <property name="bookService" ref="bookService"/>
+    </bean>
+
+
 </beans>

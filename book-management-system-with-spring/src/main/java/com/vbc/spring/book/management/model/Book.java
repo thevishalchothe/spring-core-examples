@@ -9,5 +9,5 @@ public class Book {
     private String author;
     private String genre;
     private int publishedYear;
-    private User user;
+
 }
