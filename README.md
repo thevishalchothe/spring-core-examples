@@ -59,3 +59,29 @@ Before you begin, make sure the following are installed:
 - **IntelliJ IDEA for Enterprise Java**: Download from [IntelliJ IDEA Download](https://www.jetbrains.com/idea/download/)
 - **MySQL Server**: Install from [MySQL Community](https://dev.mysql.com/downloads/installer/).
 - **Maven**: [Install Maven](https://maven.apache.org/install.html) if not bundled with your IDE.
+
+---
+
+## **Installation** 🛠️
+
+### **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/thevishalchothe/spring-core-examples.git
+
+   cd spring-core-examples
+   ```
+
+---
+
+## **Contributing** 💡
+
+We welcome contributions to the **spring-core-examples**! Here's how you can contribute:
+
+1. Fork the repository and create a new branch for your feature or bug fix.
+2. Implement your changes and commit them with clear messages.
+3. Submit a pull request for review.
+
+If you have any questions or need help, feel free to contact me at [vishalchothe134@gmail.com](mailto:vishalchothe134@gmail.com).
+
+---
