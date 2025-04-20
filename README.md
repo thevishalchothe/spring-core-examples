@@ -20,7 +20,7 @@ The `spring-core-examples` is a collection of simple Spring Framework examples d
   - Uses `spring.xml` for bean definitions with setter injection (primitives) and reference injection (objects).
   - Shows IoC via `ClassPathXmlApplicationContext` and object composition. Pure XML approach without annotations.
 
-- **book-management-system-with-spring**
+- **book-management-spring-xml**
   
   A fully functional **Book Management System** using **Spring xml-based configuration**.
   - Implemented Book, User, Admin, and Record Module CRUD operations in the `book-management-system-with-spring` project.
@@ -34,7 +34,7 @@ The `spring-core-examples` is a collection of simple Spring Framework examples d
     - Record Module: Borrow books, view/update/delete records, and filter by username (`getRecordsByUserName`).
   - Uses Spring's XML configuration for MySQL database connection, Repository, Service, and Controller beans.
 
-- **library-management-spring-annotation** 📚
+- **library-management-spring-annotation**
 
   A fully functional **Library Management System** using **Spring annotation-based configuration**.
 
