@@ -21,27 +21,41 @@ The `spring-core-examples` is a collection of simple Spring Framework examples d
   - Shows IoC via `ClassPathXmlApplicationContext` and object composition. Pure XML approach without annotations.
 
 - **book-management-system-with-spring**
+  
+  A fully functional **Book Management System** using **Spring xml-based configuration**.
   - Implemented Book, User, Admin, and Record Module CRUD operations in the `book-management-system-with-spring` project.
   - Demonstrates Spring's IoC and DI for managing books, users, and records using XML-based configuration.
   - Includes all layers: Controller, Service, and Repository for Book, User, Admin, and Record modules.
   - Uses manual JDBC (`PreparedStatement` and `DataSource`) for database operations.
-  - In the `MainApp.java`, implemented user input for:
-    - **Admin Login**: Only after successful admin login can module operations be performed.
-    - **Module Selection**: After login, the admin can choose between Book, User, and Record operations.
-    - **Book Operations**:
-      - Add, view, update, and delete books.
-      - View all books or search for a specific book by ID.
-    - **User Operations**:
-      - Add, view, update, and delete users.
-      - View all users or search for a user by ID.
-      - User has reference to `College` enum with name and address fields.
-    - **Record Operations**:
-      - Add new record (borrow book).
-      - View all records or search for a record by ID.
-      - Update or delete a record.
-      - **Search Records by Username**: Filter borrowed records by specific user's name using `getRecordsByUserName`.
-
+  - **MainApp.java** handles:
+    - Admin Login (authentication required before accessing modules),
+    - Book Module: Add, view, update, delete, and search books by ID,
+    - User Module: Add, view, update, delete users, search by ID, and associate with `College` enum,
+    - Record Module: Borrow books, view/update/delete records, and filter by username (`getRecordsByUserName`).
   - Uses Spring's XML configuration for MySQL database connection, Repository, Service, and Controller beans.
+
+- **library-management-spring-annotation** 📚
+
+  A fully functional **Library Management System** using **Spring annotation-based configuration**.
+
+  - Implements CRUD operations for:
+    - Admin: Admin registration and login authentication before accessing the system.
+    - Book Module: Add, view, update, delete, and search books.
+    - User Module: Manage user data with a reference to a `College` enum (containing name and address).
+    - Record Module: Track borrowed books, view/update/delete borrow records, and filter records by username.
+
+  -  Uses: 
+
+      - `@Component`, `@Service`, `@Repository`, `@Configuration`  
+      → Annotation-based bean management and dependency injection.
+
+      - `DriverManagerDataSource`  
+      → For **MySQL** DB connectivity using **manual JDBC** with `PreparedStatement`.
+
+      - `AnnotationConfigApplicationContext`  
+      → To bootstrap and run the Spring application.
+
+- Follows layered architecture with clear separation of **Controller**, **Service**, and **Repository** layers.
 
 ---
 
