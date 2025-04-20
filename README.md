@@ -10,6 +10,11 @@ The `spring-core-examples` is a collection of simple Spring Framework examples d
   - Simple Spring application demonstrating XML-based configuration
   - Shows basic IoC (Inversion of Control) and DI (Dependency Injection)
 
+-  **hello-spring-with-annotation**
+    -  Demonstrates basic Spring configuration using annotations instead of XML.
+    - Uses `@Component`, `@Autowired`, and `@Configuration` for defining beans and injecting dependencies.
+    - Uses `AnnotationConfigApplicationContext` to bootstrap the application to understand annotation-driven Spring development.
+      
 - **employee-department-xml-di**
   - Demonstrates Spring's XML-based DI with `Employee`-`Department` relationship.
   - Uses `spring.xml` for bean definitions with setter injection (primitives) and reference injection (objects).
