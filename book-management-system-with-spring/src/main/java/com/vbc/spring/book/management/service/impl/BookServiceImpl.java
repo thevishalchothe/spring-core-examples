@@ -3,17 +3,14 @@ package com.vbc.spring.book.management.service.impl;
 import com.vbc.spring.book.management.model.Book;
 import com.vbc.spring.book.management.repository.BookRepository;
 import com.vbc.spring.book.management.service.BookService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository;
-
-    // Setter for DI
-    public void setBookRepository(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
 
     @Override
     public void addBook(Book book) {

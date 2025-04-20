@@ -3,16 +3,14 @@ package com.vbc.spring.book.management.service.impl;
 import com.vbc.spring.book.management.model.Records;
 import com.vbc.spring.book.management.repository.RecordsRepository;
 import com.vbc.spring.book.management.service.RecordsService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class RecordsServiceImpl implements RecordsService {
 
     private RecordsRepository recordsRepository;
-
-    public void setRecordsRepository(RecordsRepository recordsRepository) {
-        this.recordsRepository = recordsRepository;
-    }
 
     @Override
     public void borrowBook(Records record) {

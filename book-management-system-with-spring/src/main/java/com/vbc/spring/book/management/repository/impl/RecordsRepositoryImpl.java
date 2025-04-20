@@ -4,19 +4,17 @@ import com.vbc.spring.book.management.model.Book;
 import com.vbc.spring.book.management.model.Records;
 import com.vbc.spring.book.management.model.User;
 import com.vbc.spring.book.management.repository.RecordsRepository;
+import lombok.Setter;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
 public class RecordsRepositoryImpl implements RecordsRepository {
 
     private DataSource dataSource;
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
 
     @Override
     public void saveRecord(Records record) {

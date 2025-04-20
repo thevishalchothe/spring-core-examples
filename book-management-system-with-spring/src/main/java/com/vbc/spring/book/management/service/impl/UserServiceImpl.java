@@ -3,16 +3,14 @@ package com.vbc.spring.book.management.service.impl;
 import com.vbc.spring.book.management.model.User;
 import com.vbc.spring.book.management.repository.UserRepository;
 import com.vbc.spring.book.management.service.UserService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
-
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public void addUser(User user) {

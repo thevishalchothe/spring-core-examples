@@ -2,20 +2,17 @@ package com.vbc.spring.book.management.repository.impl;
 
 import com.vbc.spring.book.management.model.Book;
 import com.vbc.spring.book.management.repository.BookRepository;
+import lombok.Setter;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
 public class BookRepositoryImpl implements BookRepository {
 
     private DataSource dataSource;
-
-    // Setter for DI
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
 
     @Override
     public void save(Book book) {

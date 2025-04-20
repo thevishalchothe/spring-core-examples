@@ -2,17 +2,14 @@ package com.vbc.spring.book.management.controller;
 
 import com.vbc.spring.book.management.model.Admin;
 import com.vbc.spring.book.management.service.AdminService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class AdminController {
 
     private AdminService adminService;
-
-    // Setter-based DI
-    public void setAdminService(AdminService adminService) {
-        this.adminService = adminService;
-    }
 
     public void registerAdmin(Admin admin) {
         adminService.registerAdmin(admin);

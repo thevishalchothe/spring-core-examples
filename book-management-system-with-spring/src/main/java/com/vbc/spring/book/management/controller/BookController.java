@@ -2,17 +2,15 @@ package com.vbc.spring.book.management.controller;
 
 import com.vbc.spring.book.management.model.Book;
 import com.vbc.spring.book.management.service.BookService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class BookController {
 
-    private BookService bookService;
-
     // Setter-based Dependency Injection
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
-    }
+    private BookService bookService;
 
     // Add a new book
     public void addBook(Book book) {

@@ -3,6 +3,7 @@ package com.vbc.spring.book.management.repository.impl;
 import com.vbc.spring.book.management.model.College;
 import com.vbc.spring.book.management.model.User;
 import com.vbc.spring.book.management.repository.UserRepository;
+import lombok.Setter;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -12,13 +13,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
 public class UserRepositoryImpl implements UserRepository {
 
     private DataSource dataSource;
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
 
     @Override
     public void save(User user) {

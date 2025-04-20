@@ -2,16 +2,14 @@ package com.vbc.spring.book.management.controller;
 
 import com.vbc.spring.book.management.model.Records;
 import com.vbc.spring.book.management.service.RecordsService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class RecordsController {
 
     private RecordsService recordsService;
-
-    public void setRecordsService(RecordsService recordsService) {
-        this.recordsService = recordsService;
-    }
 
     public void borrowBook(Records record) {
         recordsService.borrowBook(record);

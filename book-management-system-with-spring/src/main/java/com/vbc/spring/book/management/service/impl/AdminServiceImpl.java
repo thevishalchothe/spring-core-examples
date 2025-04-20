@@ -3,17 +3,14 @@ package com.vbc.spring.book.management.service.impl;
 import com.vbc.spring.book.management.model.Admin;
 import com.vbc.spring.book.management.repository.AdminRepository;
 import com.vbc.spring.book.management.service.AdminService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class AdminServiceImpl implements AdminService {
 
     private AdminRepository adminRepository;
-
-    // Setter-based DI
-    public void setAdminRepository(AdminRepository adminRepository) {
-        this.adminRepository = adminRepository;
-    }
 
     @Override
     public void registerAdmin(Admin admin) {

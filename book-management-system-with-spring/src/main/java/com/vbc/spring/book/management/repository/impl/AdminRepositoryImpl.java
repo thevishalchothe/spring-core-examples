@@ -2,20 +2,18 @@ package com.vbc.spring.book.management.repository.impl;
 
 import com.vbc.spring.book.management.model.Admin;
 import com.vbc.spring.book.management.repository.AdminRepository;
+import lombok.Setter;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
 public class AdminRepositoryImpl implements AdminRepository {
 
-    private DataSource dataSource;
-
     // Setter-based DI
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+    private DataSource dataSource;
 
     @Override
     public void save(Admin admin) {

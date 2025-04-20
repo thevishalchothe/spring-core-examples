@@ -2,16 +2,14 @@ package com.vbc.spring.book.management.controller;
 
 import com.vbc.spring.book.management.model.User;
 import com.vbc.spring.book.management.service.UserService;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class UserController {
 
     private UserService userService;
-
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
 
     public void addUser(User user) {
         userService.addUser(user);
